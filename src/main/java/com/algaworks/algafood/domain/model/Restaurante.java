@@ -10,7 +10,8 @@ import java.math.BigDecimal;
 public class Restaurante {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "restaurante_id_seq")
+    @SequenceGenerator(name = "restaurante_id_seq", sequenceName = "restaurante_id_seq", allocationSize = 1)
     private Long id;
 
     private String nome;
