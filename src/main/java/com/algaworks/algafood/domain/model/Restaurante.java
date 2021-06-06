@@ -1,12 +1,13 @@
-package com.algaworks.algafoodapi.domain.model;
+package com.algaworks.algafood.domain.model;
 
 import lombok.Data;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Data
-public class Cidade {
+public class Restaurante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +15,9 @@ public class Cidade {
 
     private String nome;
 
+    private BigDecimal taxaFrete;
+
     @ManyToOne
-    private Estado estado;
+    private Cozinha cozinha;
+
 }

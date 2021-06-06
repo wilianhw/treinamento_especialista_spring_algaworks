@@ -1,4 +1,4 @@
-package com.algaworks.algafoodapi.domain.model;
+package com.algaworks.algafood.domain.model;
 
 import lombok.Data;
 
@@ -9,12 +9,11 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Cozinha {
+public class FormaPagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-
+    private String descricao;
 }

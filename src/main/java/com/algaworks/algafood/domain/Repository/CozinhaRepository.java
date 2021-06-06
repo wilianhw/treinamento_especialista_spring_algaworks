@@ -1,6 +1,6 @@
-package com.algaworks.algafoodapi.domain.Repository;
+package com.algaworks.algafood.domain.Repository;
 
-import com.algaworks.algafoodapi.domain.model.Cozinha;
+import com.algaworks.algafood.domain.model.Cozinha;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
