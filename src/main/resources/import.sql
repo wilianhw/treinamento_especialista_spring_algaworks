@@ -14,10 +14,13 @@ INSERT INTO algafood.cidade (id, nome, estado_id) VALUES (2, 'Itumirim', 2);
 SELECT setval('algafood.cidade_id_seq', 3, false);
 
 -- Restaurante
-INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id, endereco_cep, endereco_logradouro, endereco_numero, endereco_complemento, endereco_bairro, endereco_cidade_id) values (1, 'Thai Gourmet', 10.00, 1, '37212', 'casa', '69', 'casa', 'centro', 1);
-INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (2, 'Thai Delivery', 9.50, 1);
-INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id) values (3, 'Tuk Tuk Comida Indiana', 15.00, 2);
+INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao, endereco_cep, endereco_logradouro, endereco_numero, endereco_complemento, endereco_bairro, endereco_cidade_id) VALUES (1, 'Thai Gourmet', 10.00, 1, current_timestamp, current_timestamp, '37212', 'casa', '69', 'casa', 'centro', 1);
+INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) VALUES (2, 'Thai Delivery', 9.50, 1, current_timestamp , current_timestamp);
+INSERT INTO algafood.restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) VALUES (3, 'Tuk Tuk Comida Indiana', 15.00, 2, current_timestamp , current_timestamp);
 SELECT setval('algafood.restaurante_id_seq', 4, false);
+
+INSERT INTO algafood.produto (id, nome, descricao, preco, ativo, restaurante_id) VALUES (1, 'Carne', 'Carne Bovina', 21.50, true, 1);
+INSERT INTO algafood.produto (id, nome, descricao, preco, ativo, restaurante_id) VALUES (2, 'Verdura', 'Alface', 1.50, true, 2);
 
 -- Forma de pagamento
 INSERT INTO algafood.forma_pagamento (id, descricao) VALUES (1, 'Debito');
