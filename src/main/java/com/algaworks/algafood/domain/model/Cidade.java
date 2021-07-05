@@ -9,8 +9,7 @@ import javax.persistence.*;
 public class Cidade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cidade_id_seq")
-    @SequenceGenerator(name = "cidade_id_seq", sequenceName = "cidade_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;

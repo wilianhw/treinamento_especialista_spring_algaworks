@@ -9,8 +9,7 @@ import javax.persistence.*;
 public class FormaPagamento {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "forma_pagamento_id_seq")
-    @SequenceGenerator(name = "forma_pagamento_id_seq", sequenceName = "forma_pagamento_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String descricao;
