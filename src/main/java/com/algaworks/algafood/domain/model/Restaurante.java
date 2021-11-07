@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.groups.ConvertGroup;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,12 +47,12 @@ public class Restaurante {
     private Endereco endereco;
 
     @CreationTimestamp
-    @Column(nullable = false)
-    private LocalDateTime dataCadastro;
+    @Column(nullable = false, columnDefinition = "datetime")
+    private OffsetDateTime dataCadastro;
 
     @UpdateTimestamp
-    @Column(nullable = false)
-    private LocalDateTime dataAtualizacao;
+    @Column(nullable = false, columnDefinition = "datetime")
+    private OffsetDateTime dataAtualizacao;
 
     @ManyToMany
     @JoinTable(name = "restaurante_forma_pagamento",
