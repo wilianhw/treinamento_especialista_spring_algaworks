@@ -1,8 +1,10 @@
 package com.algaworks.algafood.domain.service;
 
+import com.algaworks.algafood.api.model.input.CidadeIdInput;
 import com.algaworks.algafood.domain.Repository.CozinhaRepository;
 import com.algaworks.algafood.domain.Repository.RestauranteRepository;
 import com.algaworks.algafood.domain.exception.RestauranteNaoEncontradoException;
+import com.algaworks.algafood.domain.model.Cidade;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Restaurante;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,16 @@ public class CadastroRestauranteService {
     @Autowired
     private CadastroCozinhaService cadastroCozinha;
 
+    @Autowired
+    private CadastroCidadeService cadastroCidadeService;
+
     @Transactional
     public Restaurante salvar(Restaurante restaurante) {
         Long cozinhaId = restaurante.getCozinha().getId();
+        Long cidadeId = restaurante.getEndereco().getCidade().getId();
 
         Cozinha cozinha = cadastroCozinha.buscarOuFalhar(cozinhaId);
+        Cidade cidade = cadastroCidadeService.buscarOuFalhar(cidadeId);
 
         restaurante.setCozinha(cozinha);
         return restauranteRepository.save(restaurante);
