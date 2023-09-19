@@ -47,4 +47,7 @@ INSERT INTO algafood.permissao (id, nome, descricao) VALUES (1, 'Gerente', 'Tota
 INSERT INTO algafood.permissao (id, nome, descricao) VALUES (2, 'Técnico', 'Parcial');
 SELECT setval('algafood.permissao_id_seq', 3, false);
 
+-- Grupo
+insert into grupo (nome) values ('Gerente'), ('Vendedor'), ('Secretária'), ('Cadastrador');
+
 INSERT INTO algafood.restaurante_forma_pagamento (restaurante_id, forma_pagamento_id) VALUES (1, 1), (1, 2), (2, 1), (2, 2), (3, 1);
