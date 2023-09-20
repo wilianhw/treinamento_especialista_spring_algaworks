@@ -51,3 +51,7 @@ SELECT setval('algafood.permissao_id_seq', 3, false);
 insert into grupo (nome) values ('Gerente'), ('Vendedor'), ('Secretária'), ('Cadastrador');
 
 INSERT INTO algafood.restaurante_forma_pagamento (restaurante_id, forma_pagamento_id) VALUES (1, 1), (1, 2), (2, 1), (2, 2), (3, 1);
+
+-- Usuário
+INSERT INTO usuario (id, nome, email, senha) VALUES (1, 'Wilian', 'wilian@gmail.com', '123456');
+INSERT INTO usuario (id, nome, email, senha) VALUES (2, 'Pedro', 'pedro@gmail.com', '54321');
