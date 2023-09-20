@@ -6,6 +6,8 @@ import com.algaworks.algafood.domain.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class CadastroUsuarioService {
 
@@ -15,5 +17,10 @@ public class CadastroUsuarioService {
     public Usuario buscarOuFalhar(Long idUsuario) {
         return usuarioRepository.findById(idUsuario)
                 .orElseThrow(() -> new UsuarioNaoEncontradoException(idUsuario));
+    }
+
+    @Transactional
+    public Usuario save(Usuario usuario) {
+        return usuarioRepository.save(usuario);
     }
 }
