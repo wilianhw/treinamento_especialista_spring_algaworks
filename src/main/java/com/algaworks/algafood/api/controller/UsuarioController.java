@@ -51,4 +51,18 @@ public class UsuarioController {
 
         return usuarioModelAssembler.toModel(usuario);
     }
+
+    @PutMapping("/{usuarioId}")
+    public UsuarioModel atualizar(
+            @PathVariable Long usuarioId,
+            @RequestBody @Valid UsuarioInput usuarioInput
+    ) {
+        Usuario usuario = cadastroUsuarioService.buscarOuFalhar(usuarioId);
+
+        usuarioInputDisassembler.copyToDomainObject(usuarioInput, usuario);
+
+        usuario = cadastroUsuarioService.save(usuario);
+
+        return usuarioModelAssembler.toModel(usuario);
+    }
 }
