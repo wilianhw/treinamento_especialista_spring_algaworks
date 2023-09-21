@@ -53,5 +53,8 @@ insert into grupo (nome) values ('Gerente'), ('Vendedor'), ('Secretária'), ('Ca
 INSERT INTO algafood.restaurante_forma_pagamento (restaurante_id, forma_pagamento_id) VALUES (1, 1), (1, 2), (2, 1), (2, 2), (3, 1);
 
 -- Usuário
-INSERT INTO usuario (id, nome, email, senha) VALUES (1, 'Wilian', 'wilian@gmail.com', '123456');
-INSERT INTO usuario (id, nome, email, senha) VALUES (2, 'Pedro', 'pedro@gmail.com', '54321');
+INSERT INTO usuario (id, nome, email, senha, data_cadastro) VALUES
+(1, 'João da Silva', 'joao.ger@algafood.com', '123', current_timestamp),
+(2, 'Maria Joaquina', 'maria.vnd@algafood.com', '123', current_timestamp),
+(3, 'José Souza', 'jose.aux@algafood.com', '123', current_timestamp),
+(4, 'Sebastião Martins', 'sebastiao.cad@algafood.com', '123', current_timestamp);
