@@ -47,7 +47,7 @@ public class UsuarioController {
     public UsuarioModel adicionar(@RequestBody @Valid UsuarioComSenhaInput usuarioComSenhaInput) {
         Usuario usuario = usuarioInputDisassembler.toDomainObject(usuarioComSenhaInput);
 
-        usuario =  cadastroUsuarioService.save(usuario);
+        usuario = cadastroUsuarioService.save(usuario);
 
         return usuarioModelAssembler.toModel(usuario);
     }
