@@ -3,6 +3,7 @@ package com.algaworks.algafood.api.controller;
 import com.algaworks.algafood.api.assembler.UsuarioInputDisassembler;
 import com.algaworks.algafood.api.assembler.UsuarioModelAssembler;
 import com.algaworks.algafood.api.model.UsuarioModel;
+import com.algaworks.algafood.api.model.input.SenhaInput;
 import com.algaworks.algafood.api.model.input.UsuarioComSenhaInput;
 import com.algaworks.algafood.api.model.input.UsuarioInput;
 import com.algaworks.algafood.domain.Repository.UsuarioRepository;
@@ -64,5 +65,14 @@ public class UsuarioController {
         usuario = cadastroUsuarioService.save(usuario);
 
         return usuarioModelAssembler.toModel(usuario);
+    }
+
+    @PutMapping("/{usuarioId}/senha")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizarSenha(
+            @PathVariable Long usuarioId,
+            @RequestBody @Valid SenhaInput senhaInput
+    ) {
+        cadastroUsuarioService.alterarSenha(usuarioId, senhaInput.getSenhaAtual(), senhaInput.getNovaSenha());
     }
 }
